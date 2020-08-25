@@ -19,17 +19,19 @@ function cust_customizer_settings( $wp_customizer ) {
         'transport' => 'refresh',
     ) );
     $wp_customizer->add_control( 'cust_service_subheading_ctrl', array(
-        'label'    => __( 'Services Subheading', 'customizer' ),
-        'section'  => 'cust_service',
-        'settings' => 'cust_service_subheading',
-        'type'     => 'textarea',
-        'active_callback'=>function(){
-            if(get_theme_mod( 'cust_service_show_subheading' ) == 1){
+        'label'           => __( 'Services Subheading', 'customizer' ),
+        'section'         => 'cust_service',
+        'settings'        => 'cust_service_subheading',
+        'type'            => 'textarea',
+        'active_callback' => function () {
+
+            if ( get_theme_mod( 'cust_service_show_subheading' ) == 1 ) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
-        }
+
+        },
     ) );
 
     $wp_customizer->add_setting( 'cust_service_show_subheading', array(
@@ -53,41 +55,42 @@ function cust_customizer_settings( $wp_customizer ) {
         'transport' => 'postMessage',
     ) );
     $wp_customizer->add_control( new WP_Customize_Color_Control( $wp_customizer, 'cust_icon_color_ctrl', array(
-        'label'    => __( 'Icon Color','customizer' ),
+        'label'    => __( 'Icon Color', 'customizer' ),
         'section'  => 'cust_service',
         'settings' => 'cust_icon_color',
     ) ) );
 
-    $wp_customizer->add_setting('cust_num_of_services',array(
-        'default'=>4,
-        'transport'=>'refresh'
-    ));
-    $wp_customizer->add_control('cust_num_of_services_ctrl',array(
-        'label'    => __( 'Number of items','customizer' ),
+    $wp_customizer->add_setting( 'cust_num_of_services', array(
+        'default'   => 4,
+        'transport' => 'refresh',
+    ) );
+    $wp_customizer->add_control( 'cust_num_of_services_ctrl', array(
+        'label'    => __( 'Number of items', 'customizer' ),
         'section'  => 'cust_service',
         'settings' => 'cust_num_of_services',
-        'type'=>'select',
-        'choices'=>array(
-            '4'=>'3 Per Row',
-            '6'=>'2 Per Row',
-        )
-    ));
+        'type'     => 'select',
+        'choices'  => array(
+            '4' => '3 Per Row',
+            '6' => '2 Per Row',
+        ),
+    ) );
 
     $wp_customizer->add_section( 'cust_about', array(
-    'title'           => __( 'About page', 'customizer' ),
-    'priority'        => '40',
-    'active_callback' => function () {
+        'title'           => __( 'About page', 'customizer' ),
+        'priority'        => '40',
+        'active_callback' => function () {
 
             if ( is_page_template( 'page-templates/about.php' ) ) {
                 return true;
             }
+
             return false;
         },
     ) );
 
     $wp_customizer->add_setting( 'cust_about_setting', array(
-    'default'   => 'About Page Statement',
-    'transport' => 'postMessage',
+        'default'   => 'About Page Statement',
+        'transport' => 'postMessage',
     ) );
     $wp_customizer->add_control( 'cust_about_setting', array(
         'label'   => __( 'About Page', 'customizer' ),
@@ -102,23 +105,23 @@ function cust_customizer_settings( $wp_customizer ) {
         },
     ) );
 
-
     $wp_customizer->add_setting( 'cust_about_desc', array(
         'default'   => 'About Page Statement',
         'transport' => 'postMessage',
-        ) );
-        $wp_customizer->add_control( 'cust_about_desc', array(
-            'label'   => __( 'Description', 'customizer' ),
-            'section' => 'cust_about',
-            'type'    => 'textarea',
-        ) );
+    ) );
+    $wp_customizer->add_control( 'cust_about_desc', array(
+        'label'   => __( 'Description', 'customizer' ),
+        'section' => 'cust_about',
+        'type'    => 'textarea',
+    ) );
 
-        $wp_customizer->selective_refresh->add_partial('cust_desc',array(
-            'selector'=>'#cs_subheading',
-            'settings'=>array('cust_about_desc'),
-            'render_callback'=>function(){
-                return get_theme_mod('cust_about_desc');
-            }
-        ));
+    $wp_customizer->selective_refresh->add_partial( 'cust_desc', array(
+        'selector'        => '#cs_subheading',
+        'settings'        => array( 'cust_about_desc' ),
+        'render_callback' => function () {
+            return get_theme_mod( 'cust_about_desc' );
+        },
+    ) );
 }
+
 add_action( 'customize_register', 'cust_customizer_settings' );
