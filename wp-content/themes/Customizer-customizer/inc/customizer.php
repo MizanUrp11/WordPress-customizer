@@ -84,15 +84,41 @@ function cust_customizer_settings( $wp_customizer ) {
             return false;
         },
     ) );
+
     $wp_customizer->add_setting( 'cust_about_setting', array(
+    'default'   => 'About Page Statement',
+    'transport' => 'postMessage',
+    ) );
+    $wp_customizer->add_control( 'cust_about_setting', array(
+        'label'   => __( 'About Page', 'customizer' ),
+        'section' => 'cust_about',
+        'type'    => 'text',
+    ) );
+    $wp_customizer->selective_refresh->add_partial( 'about_section', array(
+        'selector'        => '#cs_heading',
+        'settings'        => array( 'cust_about_setting' ),
+        'render_callback' => function () {
+            return get_theme_mod( 'cust_about_setting' );
+        },
+    ) );
+
+
+    $wp_customizer->add_setting( 'cust_about_desc', array(
         'default'   => 'About Page Statement',
-        'transport' => 'refresh',
-    ) );
-    $wp_customizer->add_control( 'cust_about_setting_ctrl', array(
-        'label'    => __( 'About Page', 'customizer' ),
-        'section'  => 'cust_about',
-        'settings' => 'cust_about_setting',
-        'type'     => 'text',
-    ) );
+        'transport' => 'postMessage',
+        ) );
+        $wp_customizer->add_control( 'cust_about_desc', array(
+            'label'   => __( 'Description', 'customizer' ),
+            'section' => 'cust_about',
+            'type'    => 'textarea',
+        ) );
+
+        $wp_customizer->selective_refresh->add_partial('cust_desc',array(
+            'selector'=>'#cs_subheading',
+            'settings'=>array('cust_about_desc'),
+            'render_callback'=>function(){
+                return get_theme_mod('cust_about_desc');
+            }
+        ));
 }
 add_action( 'customize_register', 'cust_customizer_settings' );
