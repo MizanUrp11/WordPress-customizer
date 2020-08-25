@@ -26,6 +26,16 @@
                     <?php echo esc_html(get_theme_mod( 'cust_about_desc', __('Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illum quibusdam, nam.','customizer') )); ?>
                 <?php //echo esc_html(cs_get_customize_option('about_heading_description')); ?>
                 </p>
+
+                <?php
+                $attachment_id =  attachment_url_to_postid(get_theme_mod( 'test_image' ));
+                echo wp_get_attachment_image( $attachment_id, 'thumbnail' );
+                ?>
+                <br>
+                <?php
+                $attachment_id =  get_theme_mod( 'test_image2' );
+                echo wp_get_attachment_image( $attachment_id, 'medium' );
+                ?>
                 
             </div>
         </div>
