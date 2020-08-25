@@ -36,6 +36,16 @@
                 $attachment_id =  get_theme_mod( 'test_image2' );
                 echo wp_get_attachment_image( $attachment_id, 'medium' );
                 ?>
+
+                <br>
+
+                <?php
+                $attachment_id = attachment_url_to_postid( get_theme_mod( 'test_file' ));
+                $attachment_url =  get_theme_mod( 'test_file' );
+                echo $attachment_id;
+                //echo wp_get_attachment_image( $attachment_id, 'medium' );
+                ?>
+
                 
             </div>
         </div>
