@@ -19,10 +19,11 @@
         <div class="col-md-12">
             <div class="mission section">
                 <h1 class="heading">
-					<?php echo get_theme_mod( 'cust_about_setting', __('About Page Customize','customize') );?>
+					<?php //echo get_theme_mod( 'cust_about_setting', __('About Page Customize','customize') );?>
+                    <?php echo esc_html(cs_get_customize_option('about_heading')); ?>
                 </h1>
                 <p class="subheading">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus illum quibusdam, nam expedita illo aperiam aspernatur itaque dolores adipisci delectus!
+                <?php echo esc_html(cs_get_customize_option('about_heading_description')); ?>
                 </p>
                 
             </div>
