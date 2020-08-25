@@ -176,6 +176,22 @@ function cust_customizer_settings( $wp_customizer ) {
             )
         )
     );
+
+    $wp_customizer->add_setting( 'test_image3', array(
+        'default'   => __( 'Upload Media', 'customizer' ),
+        'transport' => 'refresh',
+    ) );
+    $wp_customizer->add_control(
+        new WP_Customize_Cropped_Image_Control(
+            $wp_customizer,
+            'test_image3',
+            array(
+                'label'    => __( 'Upload a File', 'customizer' ),
+                'section'  => 'image_and_upload',
+                'flex_width'=>true
+            )
+        )
+    );
 }
 
 add_action( 'customize_register', 'cust_customizer_settings' );
