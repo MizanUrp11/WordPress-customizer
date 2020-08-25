@@ -43,9 +43,13 @@ function customizer_csf_settings( $options ) {
     $options[] = array(
         'name'     => 'customizer_csf_section2',
         'title'    => __( 'Codestar CS fields', 'customizer' ),
+        'active_callback'=>function(){
+            return true;
+        },
         'settings' => array(
             array(
-                'name'    => 'switcher',
+                'name'    => 'switcher_handle',
+                'default'=>'1',
                 'control' => array(
                     'type'    => 'cs_field',
                     'options' => array(
@@ -55,13 +59,13 @@ function customizer_csf_settings( $options ) {
                 ),
             ),
             array(
-                'name'    => 'icon',
+                'name'    => 'dummy_text',
                 'control' => array(
-                    'type'    => 'cs_field',
-                    'options' => array(
-                        'type'  => 'icon',
-                        'title' => __( 'Select Icon', 'customizer' ),
-                    ),
+                    'label' => __( 'Dummy Text', 'customizer' ),
+                    'type'  => 'text',
+                    'active_callback'=>function(){
+                        return cs_get_customize_option('switcher_handle');
+                    }
                 ),
             ),
             array(
