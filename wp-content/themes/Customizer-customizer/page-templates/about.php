@@ -18,11 +18,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="mission section">
-                <h1 class="heading">
+                <h1 class="heading" id="cs_heading">
 					<?php //echo get_theme_mod( 'cust_about_setting', __('About Page Customize','customize') );?>
                     <?php echo esc_html(cs_get_customize_option('about_heading')); ?>
                 </h1>
-                <p class="subheading">
+                <p class="subheading" id="cs_subheading">
                 <?php echo esc_html(cs_get_customize_option('about_heading_description')); ?>
                 </p>
                 

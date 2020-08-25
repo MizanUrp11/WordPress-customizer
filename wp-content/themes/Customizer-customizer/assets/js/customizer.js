@@ -10,4 +10,15 @@
             // $('.service i').html(newValue);
         })
     });
+    wp.customize('_cs_customize_options[about_heading]',function (value) { 
+        value.bind(function (newValue) { 
+            $('#cs_heading').html(newValue);
+         })
+     });
+    
+    wp.customize('_cs_customize_options[about_heading_description]',function (value) { 
+        value.bind(function (newValue) { 
+            $('#cs_subheading').html(newValue);
+         })
+     });
 })(jQuery);

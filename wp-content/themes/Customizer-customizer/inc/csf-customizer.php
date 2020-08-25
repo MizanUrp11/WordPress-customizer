@@ -8,6 +8,7 @@ function customizer_csf_settings( $options ) {
             array(
                 'name'    => 'about_heading',
                 'default' => __( 'Some text', 'customizer' ),
+                'transport'=>'postMessage',
                 'control' => array(
                     'label' => __( 'About Heading', 'customizer' ),
                     'type'  => 'text',
@@ -15,6 +16,7 @@ function customizer_csf_settings( $options ) {
             ),
             array(
                 'name'    => 'about_heading_description',
+                'transport'=>'postMessage',
                 'default' => __( 'Description', 'customizer' ),
                 'control' => array(
                     'label' => __( 'Description', 'customizer' ),
