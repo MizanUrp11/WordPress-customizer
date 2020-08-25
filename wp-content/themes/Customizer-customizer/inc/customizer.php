@@ -23,6 +23,13 @@ function cust_customizer_settings( $wp_customizer ) {
         'section'  => 'cust_service',
         'settings' => 'cust_service_subheading',
         'type'     => 'textarea',
+        'active_callback'=>function(){
+            if(get_theme_mod( 'cust_service_show_subheading' ) == 1){
+                return true;
+            }else{
+                return false;
+            }
+        }
     ) );
 
     $wp_customizer->add_setting( 'cust_service_show_subheading', array(
