@@ -72,5 +72,27 @@ function cust_customizer_settings( $wp_customizer ) {
             '6'=>'2 Per Row',
         )
     ));
+
+    $wp_customizer->add_section( 'cust_about', array(
+    'title'           => __( 'About page', 'customizer' ),
+    'priority'        => '40',
+    'active_callback' => function () {
+
+            if ( is_page_template( 'page-templates/about.php' ) ) {
+                return true;
+            }
+            return false;
+        },
+    ) );
+    $wp_customizer->add_setting( 'cust_about_setting', array(
+        'default'   => 'About Page Statement',
+        'transport' => 'refresh',
+    ) );
+    $wp_customizer->add_control( 'cust_about_setting_ctrl', array(
+        'label'    => __( 'About Page', 'customizer' ),
+        'section'  => 'cust_about',
+        'settings' => 'cust_about_setting',
+        'type'     => 'text',
+    ) );
 }
 add_action( 'customize_register', 'cust_customizer_settings' );
