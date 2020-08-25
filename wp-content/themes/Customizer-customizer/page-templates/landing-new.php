@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="mission section">
-                    <h1 class="heading">
+                    <h1 class="heading" id="id_heading">
                         <?php echo esc_html( get_theme_mod( 'cust_service_setting', __( 'Our Mission Statement', 'customizer' ) ) ); ?>
                     </h1>
 

@@ -32,3 +32,8 @@ EOD;
     wp_add_inline_style( 'cust-main', $services_style );
 }
 add_action( 'wp_enqueue_scripts', 'cust_assets' );
+
+function cust_customizer_assets() {
+    wp_enqueue_script( 'cust-customizer-js', get_theme_file_uri( '/assets/js/customizer.js' ), array( 'jquery', 'customize-preview' ), time(), true );
+}
+add_action( 'customize_preview_init', 'cust_customizer_assets' );
