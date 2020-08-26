@@ -46,6 +46,12 @@
                 //echo wp_get_attachment_image( $attachment_id, 'medium' );
                 ?>
 
+                <hr>
+
+                <?php
+                echo esc_html(get_theme_mod( 'my_setting' ),'customizer');
+                ?>
+
                 
             </div>
         </div>
