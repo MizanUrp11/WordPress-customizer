@@ -32,6 +32,12 @@
                     <?php endif; ?>
 
                     <?php
+                    echo wp_nav_menu( array(
+                        'menu'=>'top-menu',
+                    ) );
+                    ?>
+
+                    <?php
                     $cust_number_of_items = get_theme_mod( 'cust_num_of_services', 4 );
                     ?>
 
