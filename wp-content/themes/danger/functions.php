@@ -140,10 +140,13 @@ add_action( 'widgets_init', 'danger_widgets_init' );
  * Enqueue scripts and styles.
  */
 function danger_scripts() {
-	wp_enqueue_style( 'danger-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'danger-bootstrap-css', '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' );
+	wp_enqueue_style( 'danger-style', get_stylesheet_uri(), array(), time() );
 	wp_style_add_data( 'danger-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'danger-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'danger-popper', '//cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'danger-bootstrap-js', '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
