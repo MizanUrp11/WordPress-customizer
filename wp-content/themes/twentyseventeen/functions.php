@@ -663,3 +663,28 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 9 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_meta', 21 );
+add_filter( 'woocommerce_short_description', 'ts_product_sum_mod' );
+function ts_product_sum_mod( $desc ) {
+    return strtoupper( $desc );
+}
+
+add_filter( 'woocommerce_product_tabs', 'ts_after_single_products' );
+function ts_after_single_products( $tabs ) {
+    //print_r($tabs);
+    $tabs['newTab'] = Array
+        (
+        'title'    => 'Description2',
+        'priority' => 31,
+        'callback' => 'myCallback',
+    );
+
+    return $tabs;
+}
+function myCallback() {
+    echo 'Hello world';
+}
