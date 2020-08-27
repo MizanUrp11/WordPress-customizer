@@ -10,11 +10,27 @@
  * @version 1.0
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+// if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+// 	return;
+// }
+
+
+if ( is_shop() && ! is_active_sidebar( 'shop-sidebar-1' ) ) {
+    return;
+} elseif ( ! is_shop() && ! is_active_sidebar( 'sidebar-1' ) ) {
+    return;
 }
+
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'twentyseventeen' ); ?>">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'twentyseventeen' );?>">
+	<?php
+
+if ( is_shop() ) {
+    dynamic_sidebar( 'shop-sidebar-1' );
+} else {
+    dynamic_sidebar( 'sidebar-1' );
+}
+
+?>
 </aside><!-- #secondary -->
