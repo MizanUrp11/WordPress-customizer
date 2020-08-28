@@ -38,3 +38,10 @@ add_filter( 'loop_shop_columns', 'denver_loop_shop_columns' );
 function denver_loop_shop_columns($nc){
 	return 3;
 }
+
+add_filter( 'woocommerce_product_query', 'denver_woocommerce_product_query' );
+function denver_woocommerce_product_query( $wq ) {
+    $wq->set( 'post__not_in', array(88) );
+
+    return $wq;
+}
