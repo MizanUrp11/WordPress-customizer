@@ -33,3 +33,8 @@ foreach ( $denver_includes as $file ) {
 	}
 	require_once $filepath;
 }
+
+add_filter( 'loop_shop_columns', 'denver_loop_shop_columns' );
+function denver_loop_shop_columns($nc){
+	return 3;
+}
