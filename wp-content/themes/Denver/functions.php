@@ -45,3 +45,17 @@ function denver_woocommerce_product_query( $wq ) {
 
     return $wq;
 }
+
+add_filter( 'woocommerce_product_query', 'denver_woocommerce_product_query_category' );
+function denver_woocommerce_product_query_category( $wq ) {
+    $tax_query   = (array) $wq->get( 'tax_query' );
+    $tax_query[] = array(
+        'taxonomy' => 'product_cat',
+        'field'    => 'slug',
+        'terms'    => array( 'accessories' ),
+        'operator' => 'NOT IN',
+    );
+    $wq->set( 'tax_query', $tax_query );
+
+    return $wq;
+}
