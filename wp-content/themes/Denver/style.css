@@ -34,3 +34,32 @@ The dependencies can be found in /src/ after running "gulp copy-assets" terminal
 
 ...and now go out and play!
 */
+
+ul.product_list li{
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 4.236em;
+    text-align: center;
+    position: relative;
+}
+ul.product_list li img{
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px){
+    ul.product_list{
+        margin-left: 0;
+        clear: both;
+    }
+    ul.product_list li{
+        width: 29.411%;
+        float: left;
+        margin-right: 5.88;
+    }
+    ul.product_list li:nth-of-type(3){
+        margin-right: 0;
+    }
+    .woocommerce-loop-category__title{
+        font-size: 1em;
+    }
+}

@@ -14,3 +14,5 @@
 
 2020-08-29T02:38:53+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN), expecting ';' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 61
 
+2020-08-29T16:59:06+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\inc\setup.php on line 142
+

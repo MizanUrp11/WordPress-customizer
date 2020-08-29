@@ -19,7 +19,7 @@ if ( ! function_exists( 'denver_scripts' ) ) {
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/css/theme.min.css' );
 		wp_enqueue_style( 'denver-styles', get_template_directory_uri() . '/css/theme.min.css', array(), $css_version );
-
+		wp_enqueue_style( 'denver-css', get_stylesheet_uri(), null, time() );
 		wp_enqueue_script( 'jquery' );
 
 		$js_version = $theme_version . '.' . filemtime( get_template_directory() . '/js/theme.min.js' );
