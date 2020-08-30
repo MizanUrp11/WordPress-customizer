@@ -61,23 +61,28 @@ function denver_woocommerce_product_query_category( $wq ) {
 }
 
 function denver_woocommerce_before_shop_loop() {
-    echo "<ul class='product_list'>";
-    woocommerce_output_product_categories();
-    echo "<ul>";
-
     $term_id   = get_queried_object()->term_id;
-	$parent_id = get_queried_object(  )->parent;
-	if($parent_id > 0){
-		$term_id = $parent_id;
-	}
+    $parent_id = get_queried_object()->parent;
+
+    if ( $term_id == $parent_id ) {
+        echo "<ul class='products column-3'>";
+        woocommerce_output_product_categories();
+        echo "<ul>";
+    }
+
+    if ( $parent_id > 0 ) {
+        $term_id = $parent_id;
+    }
+
     if ( $term_id ) {
-        echo "<ul class='product_list'>";
-        woocommerce_output_product_categories(array(
-			'parent_id'=>$term_id
-		));
+        echo "<ul class='products column-3'>";
+        woocommerce_output_product_categories( array(
+            'parent_id' => $term_id,
+        ) );
         echo "<ul>";
     }
 
 }
 
 add_action( 'woocommerce_before_shop_loop', 'denver_woocommerce_before_shop_loop', 11 );
+//We can do this from customizer also
