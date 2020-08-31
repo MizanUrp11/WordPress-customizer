@@ -4,3 +4,5 @@
 
 2020-08-31T13:55:48+00:00 CRITICAL syntax error, unexpected 'loop_shop_columns' (T_STRING), expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 149
 
+2020-08-31T18:56:22+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN), expecting ';' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 167
+
