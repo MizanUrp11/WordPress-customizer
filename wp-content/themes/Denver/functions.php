@@ -89,41 +89,43 @@ function denver_woocommerce_before_shop_loop() {
 //We can do this from customizer also
 
 function denver_woocommerce_before_shop_loop_jg() {
-    $cat_args = array(
-        'orderby'    => 'name',
-        'order'      => 'asc',
-        'hide_empty' => false,
-    );
-    $product_categories = get_terms( 'product_cat', $cat_args );
-    ?>
+
+    if ( isset( $_GET['cg'] ) && $_GET['cg'] == 1 ) {
+        $cat_args = array(
+            'orderby'    => 'name',
+            'order'      => 'asc',
+            'hide_empty' => false,
+        );
+        $product_categories = get_terms( 'product_cat', $cat_args );
+        ?>
 <div id="justified_gallery" class="justified-category-list js-justifyGallery">
 	<?php
 
-    foreach ( $product_categories as $product_category ): ?>
+        foreach ( $product_categories as $product_category ): ?>
 	<?php
 $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnail_id', true );
-    $thumbnail    = wp_get_attachment_image_url( $thumbnail_id, 'large' );
+        $thumbnail    = wp_get_attachment_image_url( $thumbnail_id, 'large' );
 
-    if ( ! $thumbnail ) {
-        continue;
-    }
+        if ( ! $thumbnail ) {
+            continue;
+        }
 
-    ?>
+        ?>
 	<a href="<?php echo esc_url( get_term_link( $product_category, 'product_cat' ) ); ?>">
 		<?php
 
-		if ( $thumbnail ): ?>
+        if ( $thumbnail ): ?>
 			<img src="<?php echo esc_attr( $thumbnail ); ?>" alt="<?php echo esc_attr( $product_category->name ); ?>">
 			<?php endif;?>
 			<div class="contents">
 				<?php
 
-		if ( $product_category->name ): ?>
+        if ( $product_category->name ): ?>
 				<h2><?php echo esc_html( $product_category->name ); ?></h2>
 				<?php endif;?>
 				<?php
 
-		if ( $product_category->description ): ?>
+        if ( $product_category->description ): ?>
 				<p><?php echo esc_html( $product_category->description ); ?></p>
 				<?php endif;?>
 
@@ -133,6 +135,9 @@ $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnai
 </div>
 <?php
 }
+
+}
+
 
 add_action( 'woocommerce_before_shop_loop', 'denver_woocommerce_before_shop_loop_jg',11 );
 

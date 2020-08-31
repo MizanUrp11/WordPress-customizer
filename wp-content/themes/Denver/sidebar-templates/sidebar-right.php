@@ -7,16 +7,21 @@
 
 // Exit if accessed directly.
 
-if(is_shop()){
-	$denver_sidebar = 'shop-sidebar';
-}else{
-	$denver_sidebar = 'right-sidebar';
+if ( is_shop() && isset( $_GET['sidebar'] ) ) {
+    $denver_sidebar = 'shop-sidebar';
+} elseif(isset( $_GET['sidebar'] )) {
+    $denver_sidebar = 'right-sidebar';
 }
+
+
 defined( 'ABSPATH' ) || exit;
 
 if ( ! is_active_sidebar( $denver_sidebar ) ) {
-	return;
+    return;
 }
+
+
+
 
 // when both sidebars turned on reduce col size to 3 from 4.
 $sidebar_pos = get_theme_mod( 'denver_sidebar_position' );
