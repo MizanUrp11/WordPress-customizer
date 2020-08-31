@@ -145,3 +145,13 @@ function denver_woocommerce_product_query2( $wcq ) {
 
     return $wcq;
 }
+
+add_filter( 'loop_shop_columns', 'denver_loop_shop_columns2' );
+function denver_loop_shop_columns2( $nc ) {
+
+    if ( isset( $_GET['nc'] ) && $_GET['nc'] > 0 ) {
+        $nc = sanitize_text_field( $_GET['nc'] );
+    }
+
+    return $nc;
+}
