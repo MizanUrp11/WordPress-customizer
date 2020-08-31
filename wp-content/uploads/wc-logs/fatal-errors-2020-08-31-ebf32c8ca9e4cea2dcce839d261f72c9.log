@@ -1,0 +1,6 @@
+2020-08-31T13:45:47+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 142
+
+2020-08-31T13:53:47+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 149
+
+2020-08-31T13:55:48+00:00 CRITICAL syntax error, unexpected 'loop_shop_columns' (T_STRING), expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\Denver\functions.php on line 149
+

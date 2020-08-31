@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Understrap functions and definitions
  *
@@ -46,7 +47,7 @@ function denver_woocommerce_product_query( $wq ) {
     return $wq;
 }
 
-add_filter( 'woocommerce_product_query', 'denver_woocommerce_product_query_category' );
+//add_filter( 'woocommerce_product_query', 'denver_woocommerce_product_query_category' );
 function denver_woocommerce_product_query_category( $wq ) {
     $tax_query   = (array) $wq->get( 'tax_query' );
     $tax_query[] = array(
@@ -134,3 +135,13 @@ $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnai
 }
 
 add_action( 'woocommerce_before_shop_loop', 'denver_woocommerce_before_shop_loop_jg',11 );
+
+add_action( 'woocommerce_product_query', 'denver_woocommerce_product_query2' );
+function denver_woocommerce_product_query2( $wcq ) {
+
+    if ( isset( $_GET['wcpagination'] ) && $_GET['wcpagination'] == 0 ) {
+        $wcq->set( 'posts_per_page', '-1' );
+    }
+
+    return $wcq;
+}
