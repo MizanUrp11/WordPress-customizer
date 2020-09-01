@@ -34,6 +34,7 @@ piklist( 'field', array(
     'label'      => __( 'Select Color', 'twentyseventeen' ),
     'value'      => '#ffffff',
     'conditions' => array(
+        'relation' => 'or',
         array(
             'field' => 'colors',
             'value' => 'others',
