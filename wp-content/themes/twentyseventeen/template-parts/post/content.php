@@ -59,6 +59,15 @@
 			)
 		);
 
+		?>
+		<hr>
+		<?php
+		echo get_post_meta( get_the_ID(  ), 'demo_text', true )."<br>";
+		echo "My favorite: ".join(',',get_post_meta($post->ID,'demo_text'))."<br>";
+		?>
+		<hr>
+		<?php
+
 		wp_link_pages(
 			array(
 				'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
