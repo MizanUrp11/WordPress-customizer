@@ -59,6 +59,18 @@
 			)
 		);
 
+		$testimonials = get_post_meta( $post->ID, 'testimonials', true );
+
+		if ( $testimonials ) {
+
+			foreach ( $testimonials as $testimonial ) {
+				echo "<hr>";
+				echo "Name: " . $testimonial['twentyseventeen_tname'] . "<br>";
+				echo "Description: " . $testimonial['Description'] . "<br>";
+				echo wp_get_attachment_image( $testimonial['Upload Image'][0], 'full' );
+			}
+
+		}
 		?>
 		<hr>
 		<?php
