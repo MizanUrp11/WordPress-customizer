@@ -71,6 +71,19 @@
 			}
 
 		}
+
+		$team_members              = get_post_meta( $post->ID, 'team_members_group', true );
+		$team_members_name         = $team_members['name'];
+		$team_members_testimonials = $team_members['team_member_testimonials'];
+
+		foreach ( $team_members_testimonials as $team_members_testimonial ) {
+			echo "<hr>";
+			echo apply_filters( 'the_content', $team_members_testimonial['name'] );
+			echo apply_filters( 'the_content', $team_members_testimonial['description'] );
+			echo wp_get_attachment_image( $team_members_testimonial['image'][0], 'full' );
+		}
+
+
 		?>
 		<hr>
 		<?php
