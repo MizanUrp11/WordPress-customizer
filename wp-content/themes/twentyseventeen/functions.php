@@ -720,3 +720,24 @@ function twentyseventeen_piklist_part_process( $part ) {
 }
 
 add_filter( 'piklist_part_process', 'twentyseventeen_piklist_part_process' );
+
+function twentyseventeen_piklist_display_options( $part ) {
+    global $post;
+
+    if ( 'post' == $post->post_type ) {
+        $display_options = get_post_meta( $post->ID, 'twentyseventeen_display_options', true );
+
+        if ( 'masonry.php' == $part['part'] && ! in_array( $display_options, array( 'masonry' ) ) ) {
+            return false;
+        }
+
+        if ( 'justified.php' == $part['part'] && ! in_array( $display_options, array( 'justified' ) ) ) {
+            return false;
+        }
+
+    }
+
+    return $part;
+}
+
+add_filter( 'piklist_part_process', 'twentyseventeen_piklist_display_options' );
