@@ -72,6 +72,11 @@
 
 		}
 
+		$theme_settings = get_option( 'my_theme_settings');
+		echo "<pre>";
+		print_r($theme_settings);
+		echo "</pre>";
+
 		$team_members              = get_post_meta( $post->ID, 'team_members_group', true );
 		$team_members_name         = $team_members['name'];
 		$team_members_testimonials = $team_members['team_member_testimonials'];
