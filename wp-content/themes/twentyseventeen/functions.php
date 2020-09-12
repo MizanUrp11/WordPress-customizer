@@ -700,3 +700,23 @@ function ts_after_single_products( $tabs ) {
 function myCallback() {
     echo 'Hello world';
 }
+
+function twentyseventeen_piklist_part_process( $part ) {
+    global $post;
+
+    if ( 'post' == $post->post_type ) {
+
+        if ( 'gallery.php' == $part['part'] && ! in_array( get_post_format(), array( 'gallery' ) ) ) {
+            return false;
+        }
+
+        if ( 'audio-video.php' == $part['part'] && ! in_array( get_post_format(), array( 'audio', 'video' ) ) ) {
+            return false;
+        }
+
+    }
+
+    return $part;
+}
+
+add_filter( 'piklist_part_process', 'twentyseventeen_piklist_part_process' );

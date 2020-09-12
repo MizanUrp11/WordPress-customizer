@@ -1,0 +1,10 @@
+2020-09-11T14:46:35+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\customiser\wp-content\plugins\kirki\modules\css\field\class-kirki-output-field-dimensions.php on line 15
+
+2020-09-11T14:46:51+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\customiser\wp-content\plugins\csf\fields\content\content.php on line 1
+
+2020-09-11T14:46:51+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\customiser\wp-content\plugins\csf\fields\group\group.php on line 1
+
+2020-09-11T14:46:57+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\customiser\wp-includes\functions.php on line 6023
+
+2020-09-11T14:47:12+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\customiser\wp-includes\link-template.php on line 3426
+
