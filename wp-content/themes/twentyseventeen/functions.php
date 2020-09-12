@@ -741,3 +741,25 @@ function twentyseventeen_piklist_display_options( $part ) {
 }
 
 add_filter( 'piklist_part_process', 'twentyseventeen_piklist_display_options' );
+
+function t_piklist_part_process( $part ) {
+    global $post;
+
+    if ( 'section' == $post->post_type ) {
+        $section_type = get_post_meta( $post->ID, 't_section_type', true );
+        $sections     = array( 'banar', 'testimonial' );
+
+        foreach ( $sections as $section ) {
+
+            if ( "section-$section.php" == $part['part'] && $section != $section_type ) {
+                return false;
+            }
+
+        }
+
+    }
+
+    return $part;
+}
+
+add_filter( 'piklist_part_process', 't_piklist_part_process' );
