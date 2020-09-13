@@ -12,6 +12,8 @@ piklist( 'field', array(
     'choices' => array(
         'none'        => __( 'Select a type', 'twentyseventeen' ),
         'banar'       => __( 'Banar', 'twentyseventeen' ),
+        'gallery'       => __( 'Gallery', 'twentyseventeen' ),
+        'service'       => __( 'Service', 'twentyseventeen' ),
         'testimonial' => __( 'Testimonial', 'twentyseventeen' ),
     ),
 ) );

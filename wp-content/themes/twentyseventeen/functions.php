@@ -782,3 +782,19 @@ function piklist_theme_setting_pages( $pages ) {
 	
     return $pages;
 }
+
+function t_piklist_pointer( $part ) {
+
+    if ( 'dashboard.php' == $part['part'] ) {
+        $_screen = get_current_screen();
+
+        if ( $_screen->id != 'themes' ) {
+            return false;
+        }
+
+    }
+
+    return $part;
+}
+
+add_filter( 'piklist_part_process', 't_piklist_pointer' );
