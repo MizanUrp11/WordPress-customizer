@@ -816,3 +816,17 @@ function t_piklist_admin_notice( $part ) {
 }
 
 add_filter( 'piklist_part_process', 't_piklist_admin_notice' );
+
+function t_edit_form_after_title() {
+    piklist( 'field', array(
+        'type'       => 'text',
+        'field'      => 'prefix_subtitle',
+        'template'      => 'field',
+        'label'      => __( 'Enter Subtitle', 'twentyseventeen' ),
+        'attributes' => array(
+            'class'       => 'large-text',
+            'placeholder' => __( 'This is a placeholder', 'twentyseventeen' ),
+        ),
+    ) );
+}
+add_action( 'edit_form_after_title', 't_edit_form_after_title' );
