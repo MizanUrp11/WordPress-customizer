@@ -798,3 +798,21 @@ function t_piklist_pointer( $part ) {
 }
 
 add_filter( 'piklist_part_process', 't_piklist_pointer' );
+
+
+
+function t_piklist_admin_notice( $part ) {
+    $condition = true;
+
+    if ( 'mynotices.php' == $part['part'] ) {
+
+        if ( ! $condition ) {
+            return false;
+        }
+
+    }
+
+    return $part;
+}
+
+add_filter( 'piklist_part_process', 't_piklist_admin_notice' );
