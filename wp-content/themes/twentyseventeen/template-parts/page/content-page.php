@@ -21,6 +21,15 @@
 		<?php
 			the_content();
 
+			$related_posts = get_post_meta( $post->ID, 'related_posts' );
+			echo "<h2>Related Posts</h2>";
+			foreach ( $related_posts as $related_post ) {
+				?>
+				<a target="_blank" href="<?php echo get_the_permalink( $related_post ); ?>"><?php echo get_the_title( $related_post ); ?></a><br>
+				<?php
+			}
+
+
 			wp_link_pages(
 				array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),

@@ -1,0 +1,36 @@
+2020-09-13T02:08:20+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php:2598
+Stack trace:
+#0 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(2949): Piklist::object_format(Array)
+#1 C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\piklist\parts\meta-boxes\posts.php(16): piklist(Array)
+#2 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(523): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist-meta.php(319): Piklist::render('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\customiser\wp-admin\includes\template.php(1389): Piklist_Meta::meta_box(Object(WP_Post), Array)
+#5 C:\xampp\htdocs\customiser\wp-admin\edit-form-advanced.php(686): do_meta_boxes(Object(WP_Screen), 'normal', Object(WP_Post))
+#6 C:\xampp\htdocs\customiser\wp-admin\post-new.php(75): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php on line 2598
+
+2020-09-13T02:11:50+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php:2598
+Stack trace:
+#0 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(2949): Piklist::object_format(Array)
+#1 C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\piklist\parts\meta-boxes\posts.php(16): piklist(Array)
+#2 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(523): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist-meta.php(319): Piklist::render('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\customiser\wp-admin\includes\template.php(1389): Piklist_Meta::meta_box(Object(WP_Post), Array)
+#5 C:\xampp\htdocs\customiser\wp-admin\edit-form-advanced.php(686): do_meta_boxes(Object(WP_Screen), 'normal', Object(WP_Post))
+#6 C:\xampp\htdocs\customiser\wp-admin\post-new.php(75): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php on line 2598
+
+2020-09-13T02:11:58+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php:2598
+Stack trace:
+#0 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(2949): Piklist::object_format(Array)
+#1 C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\piklist\parts\meta-boxes\posts.php(16): piklist(Array)
+#2 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php(523): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist-meta.php(319): Piklist::render('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\customiser\wp-admin\includes\template.php(1389): Piklist_Meta::meta_box(Object(WP_Post), Array)
+#5 C:\xampp\htdocs\customiser\wp-admin\edit-form-advanced.php(686): do_meta_boxes(Object(WP_Screen), 'normal', Object(WP_Post))
+#6 C:\xampp\htdocs\customiser\wp-admin\post-new.php(75): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\customiser\wp-content\plugins\piklist\includes\class-piklist.php on line 2598
+
