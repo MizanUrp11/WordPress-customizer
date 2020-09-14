@@ -36,3 +36,5 @@ Stack trace:
 
 2020-09-13T03:48:00+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\functions.php on line 787
 
+2020-09-13T18:04:37+00:00 CRITICAL syntax error, unexpected '( array )' (array) (T_ARRAY_CAST) in C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\functions.php on line 836
+
