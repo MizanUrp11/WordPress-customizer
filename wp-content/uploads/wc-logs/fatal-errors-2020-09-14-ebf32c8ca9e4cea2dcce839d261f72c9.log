@@ -1,2 +1,20 @@
 2020-09-14T15:23:59+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\twentyseventeen\functions.php on line 840
 
+2020-09-14T16:04:59+00:00 CRITICAL syntax error, unexpected 'after_setup_theme' (T_STRING), expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 5
+
+2020-09-14T16:06:59+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 10
+
+2020-09-14T16:08:59+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 18
+
+2020-09-14T16:10:59+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 22
+
+2020-09-14T16:20:59+00:00 CRITICAL syntax error, unexpected end of file in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 47
+
+2020-09-14T16:22:59+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 49
+
+2020-09-14T16:26:59+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 57
+
+2020-09-14T16:28:59+00:00 CRITICAL syntax error, unexpected ':', expecting ')' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 58
+
+2020-09-14T16:33:59+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\customiser\wp-content\themes\simpleshop\functions.php on line 63
+
